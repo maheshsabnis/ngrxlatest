@@ -25,3 +25,22 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+npm install --save bootstrap  --legacy-peer-deps
+
+# NGRX
+- StoreModule
+  - Manage the STore
+  - Register the Reducers so that they can liosten to actions to Update the store based on payload
+  - @ngrx/store
+  - Provide a 'store' object    
+    - The 'dispatch()' methdo to dispatch action
+- EffectsModule
+  - Events based 
+  - Listen to actions those are dispatched
+  - Manages Action Execution (Sync / Async)
+    - Dispatch Output Action along with payload
+  - @ngrx/effects
+    - The effect is Angular Service
+    - passed to the EffectsModule, so that it can register the service at module level       

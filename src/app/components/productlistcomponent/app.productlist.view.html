@@ -1,0 +1,30 @@
+<h2>Then Product List Component</h2>
+<input type="button" value="Create New Product"
+ class="btn btn-warning">
+ <div class="container">
+<table class="table table-bordered table-striped">
+           <thead>
+              <tr>
+                <th *ngFor="let header of coloumnHeaders">{{header}}</th>
+              </tr>
+           </thead>
+           <tbody>
+             <!--async is the pipe that will be used to read
+            data from the Observable (products$) asynchronously-->
+             <tr *ngFor="let prd of products$|async">
+               <td *ngFor="let header of coloumnHeaders">
+                  {{prd[header]}}
+               </td>
+               <td>
+                <input type="button" value="Edit"
+                class="btn btn-warning"
+                (click)="navigateToEdit(prd.ProductRowId)">
+               </td>
+               <td>
+                <input type="button" value="Delete"
+                class="btn btn-danger">
+               </td>
+             </tr>
+           </tbody>
+        </table>
+      </div>
